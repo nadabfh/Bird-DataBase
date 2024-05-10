@@ -1,0 +1,25 @@
+<body>
+<div>
+  <nav class="navbar navbar-dark bg-dark main-nav">
+    <a class="navbar-brand title" href="/" matTooltip="Retournez à l'accueil">INF3710 - TP5</a>
+    <div class="navbar-expand mr-auto">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" *ngIf=" route == '/species'"> <mat-icon (click)="openDialog()" >
+          create_new_folder
+        </mat-icon></a>
+       
+       
+      </div>
+    </div>
+  </nav>
+
+  <div class="home" *ngIf="route == ''">
+    <p>
+      Espèces oiseaux
+    </p>
+    <button mat-raised-button color="primary" class="btn" routerLink="/species">Parcourir<mat-icon>arrow_right</mat-icon></button>
+  </div>
+  <router-outlet></router-outlet>
+</div>
+
+</body>

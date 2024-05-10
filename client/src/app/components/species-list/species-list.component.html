@@ -1,0 +1,3 @@
+<div class='birds-list' *ngFor="let bird of speciesList">
+    <app-species-list-item [species]="bird" (click)= "openDetailsDialog(bird)" (deleteBirdFromList)="onDeleteBirdFromList($event)" ></app-species-list-item>
+</div>

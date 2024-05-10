@@ -1,0 +1,43 @@
+<form #birdForm="ngForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nom Scientifique</mat-label>
+      <input matInput placeholder="Nom Scientifique" name="nomscientifique" [(ngModel)]="bird.nomscientifique" required>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Nom Commun</mat-label>
+      <input matInput placeholder="Nom Commun" name="nomcommun" [(ngModel)]="bird.nomcommun" required>
+    </mat-form-field>
+    
+    <div class="status-fields-container">
+        <mat-form-field appearance="fill" >
+        <mat-label>Statut Espèces</mat-label>
+        <mat-select name="statutspeces" [(ngModel)]="selectedStatus" required (ngModelChange)="onStatusSelected($event)">
+          <mat-option value="Vulnérable">Vulnérable</mat-option>
+          <mat-option value="Préoccupation mineure">Préoccupation mineure</mat-option>
+          <mat-option value="Non menacée">Non menacée</mat-option>
+          <mat-option value="custom">Customisé...</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+      <mat-form-field *ngIf="selectedStatus === 'custom'" appearance="fill">
+        <mat-label>Statut Espèces Customisé</mat-label>
+        <input matInput placeholder="Statut Espèces Customisé" [(ngModel)]="customStatus" (ngModelChange)="onCustomStatusChanged($event)" [required]="selectedStatus === 'custom'">
+      </mat-form-field>
+    </div>
+    
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Nom Scientifique Consommé</mat-label>
+        <mat-select name="nomscientifiquecomsommer" [(ngModel)]="bird.nomscientifiquecomsommer">
+          <mat-option></mat-option>
+          <mat-option *ngFor="let birdOption of birdsWithNullPredator" [value]="birdOption.nomscientifique">
+            {{ birdOption.nomcommun }} ({{ birdOption.nomscientifique }})
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+  
+      <button mat-raised-button type="submit" (click)="submitForm()" [disabled]="!birdForm.valid">Submit</button>
+
+</form>

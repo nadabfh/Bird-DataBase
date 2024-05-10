@@ -1,0 +1,33 @@
+#bird-card {
+    box-shadow: 2px 2px 2.5px 0 rgba(0, 0, 0, 0.1); 
+    border-radius: 5pt;
+    background-color: rgb(216, 199, 255);
+    cursor: pointer;
+}
+
+#bird-card:hover {
+    background-color: rgba(154, 117, 240, 0.2);
+}
+
+#bird-card-content {
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 8px; 
+    align-items: center;
+    /* color: rgba(154, 117, 240, 1); */
+}
+
+#icons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}

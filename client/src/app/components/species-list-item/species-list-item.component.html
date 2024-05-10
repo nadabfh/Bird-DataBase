@@ -1,0 +1,12 @@
+<mat-card  id="bird-card">
+    <mat-card-content id="bird-card-content" >
+        <p id="bird-sci-name">{{species.nomscientifique}} </p>
+        <p id="bird-com-name">{{species.nomcommun}}</p>
+        <p id="bird-status">{{species.statutspeces}}</p>
+        <p id="bird-sci-cons">{{species.nomscientifiquecomsommer}}</p>
+        <div  id="icons-container">
+            <button mat-icon-button (click)="modifyBird($event)" color="primary" ><mat-icon >create</mat-icon></button>
+            <button mat-icon-button (click)="deleteBird($event)" color="warn"><mat-icon>delete</mat-icon></button>
+        </div>
+    </mat-card-content>
+</mat-card>

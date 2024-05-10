@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Détails de l'Espèce Oiseau</h2>
+<mat-dialog-content>
+  <p><strong> Nom Scientifique:</strong> {{ data.bird.nomscientifique }}</p>
+  <p><strong> Nom Commun:</strong> {{ data.bird.nomcommun }}</p>
+  <p><strong> Statut Espèces:</strong> {{ data.bird.statutspeces }}</p>
+  <p *ngIf="data.bird.nomscientifiquecomsommer"> <strong>Scientifique Consommé:</strong>  {{ data.bird.nomscientifiquecomsommer }}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
